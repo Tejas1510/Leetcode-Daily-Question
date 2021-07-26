@@ -200,3 +200,52 @@ while True:
     except EOFError:
         #print or return somethin
         break
+
+# enumerate in python
+s="ababcbacadefegdehijhklij"
+s1=enumerate(s)
+# It simply create a object having index and character
+#output
+# 0 a
+# 1 b
+# 2 a
+# 3 b
+# 4 c
+# 5 b
+# 6 a
+# 7 c
+# 8 a
+# 9 d
+# 10 e
+# 11 f
+# 12 e
+# 13 g
+# 14 d
+# 15 e
+# 16 h
+# 17 i
+# 18 j
+# 19 h
+# 20 k
+# 21 l
+# 22 i
+# 23 j
+
+# Very Important Merge Interval Function
+def merge(a):
+        a=sorted(a,key=lambda x:x[0])
+        l=a[0][0]
+        r=a[0][1]
+        b=[]
+        
+        for i in range(1,len(a)):
+            if(a[i][0]<=r and a[i][1]>=l):
+                r=max(r,a[i][1])
+                l=min(l,a[i][0])
+            else:
+                b.append([l,r])
+                l=a[i][0]
+                r=a[i][1]
+        b.append([l,r])
+        return b
+            
