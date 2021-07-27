@@ -249,3 +249,7 @@ def merge(a):
         b.append([l,r])
         return b
             
+# Count all the perfect sqaure below a specified number
+n=10
+import math
+print(int(math.sqrt(n)))
