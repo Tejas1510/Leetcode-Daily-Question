@@ -253,3 +253,27 @@ def merge(a):
 n=10
 import math
 print(int(math.sqrt(n)))
+
+# Find Intersection of n array
+n,m=map(int,input().split())
+a=[]
+for i in range(n):
+    a.append(list(map(int,input().split())))
+
+# Method 1
+ans = list(set.intersection(*[set(x) for x in a]))
+ans.sort()
+if(len(ans)==0):
+    print(-1)
+else:
+    for i in ans:
+        print(i,end=" ")
+
+# Method 2
+t1=set(a[0])
+for i in range(1,len(a)):
+    t1=t1 & set(a[i])
+if(t1==set()):
+    print(-1)
+else:
+    print(t1)
