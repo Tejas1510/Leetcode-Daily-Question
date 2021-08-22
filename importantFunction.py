@@ -277,3 +277,21 @@ if(t1==set()):
     print(-1)
 else:
     print(t1)
+
+# Binary Search function to find the nearest lowest value of an entered number in an array
+def bs(self,a,target):
+        start=0
+        end=len(a)-1
+        if(end==0):
+            return end
+        if(a[end]<target):
+            return end
+        ans=-1
+        while(start<=end):
+            mid=(start+end)//2
+            if(a[mid]>target):
+                end=mid-1
+            else:
+                ans=mid
+                start=mid+1
+        return ans
